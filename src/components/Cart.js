@@ -29,14 +29,20 @@ const Cart = (props) => {
                 return (
                   <div key={cartItem.id} className="Cart--line">
                     <div className="Cart--counter">
-                      <span onClick={() => removeItem(cartItem.id)}>
+                      <span
+                        data-testid="minus-button"
+                        onClick={() => removeItem(cartItem.id)}
+                      >
                         <MinusIcon
                           size={20}
                           style={{ cursor: "pointer", color: "#00CEBD" }}
                         />
                       </span>
-                      <span>{cartItem.amount}</span>
-                      <span onClick={() => addItem(cartItem.id)}>
+                      <span data-testid="counter">{cartItem.amount}</span>
+                      <span
+                        data-testid="plus-button"
+                        onClick={() => addItem(cartItem.id)}
+                      >
                         <PlusIcon
                           size={20}
                           style={{ cursor: "pointer", color: "#00CEBD" }}
